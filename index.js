@@ -61,7 +61,7 @@ webpackJsonp([1,0],[
 	var routes = theme.completedRoutes.map(function (item, index) {
 	  return React.createElement(Route, {
 	    key: index,
-	    path: '/bisheng-theme-one/' + item.route.replace(/^\//, ''),
+	    path: item.route,
 	    component: templateWrapper(item.template, item.dataPath)
 	  });
 	});
