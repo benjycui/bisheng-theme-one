@@ -73,7 +73,7 @@ webpackJsonp([1,0],[
 
 	ReactDOM.render(React.createElement(ReactRouter.Router, {
 	  history: ReactRouter.useRouterHistory(history.createHistory)({
-	    basename: '/bisheng-theme-one'
+	    basename: '/bisheng-theme-one/'
 	  }),
 	  children: routes
 	}), document.getElementById('react-content'));
