@@ -9272,7 +9272,8 @@ webpackJsonp([3,2],[
 	    component: './template/Post'
 	  }, {
 	    path: '/tags',
-	    component: './template/TagCloud'
+	    component: './template/TagCloud',
+	    dataPath: '/'
 	  }]
 	};
 
@@ -26278,7 +26279,8 @@ webpackJsonp([3,2],[
 
 	module.exports = function createElement(Component, props) {
 	  NProgress.done();
-	  return React.createElement(Component, _extends({}, props, Component.dynamicProps));
+	  var dynamicPropsKey = props.location.pathname;
+	  return React.createElement(Component, _extends({}, props, Component[dynamicPropsKey]));
 	};
 
 /***/ },
@@ -26341,8 +26343,9 @@ webpackJsonp([3,2],[
 	        pageData: pageData,
 	        utils: utils
 	      }), function (err, nextProps) {
-	        var Comp = (hasParams(dataPath) || pageData) && err !== 404 ? Template.default || Template : NotFound;
-	        Comp.dynamicProps = nextProps;
+	        var Comp = (hasParams(dataPath) || pageData) && err !== 404 ? Template.default || Template : NotFound.default || NotFound;
+	        var dynamicPropsKey = nextState.location.pathname;
+	        Comp[dynamicPropsKey] = nextProps;
 	        callback(err === 404 ? null : err, Comp);
 	      });
 	    };
