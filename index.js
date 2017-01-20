@@ -26410,17 +26410,7 @@ webpackJsonp([3,2],[
 	    // hideBisheng: true,
 	    github: 'https://github.com/benjycui/bisheng-theme-one'
 	  },
-	  lazyLoad: true,
-	  root: '/bisheng-theme-one/',
-	  plugins: ['bisheng-plugin-description'],
-	  pick: {
-	    posts: function posts(markdownData) {
-	      return {
-	        meta: markdownData.meta,
-	        description: markdownData.description
-	      };
-	    }
-	  }
+	  root: '/bisheng-theme-one/'
 	};
 
 /***/ },
@@ -26430,6 +26420,16 @@ webpackJsonp([3,2],[
 	'use strict';
 
 	module.exports = {
+	  lazyLoad: true,
+	  pick: {
+	    posts: function posts(markdownData) {
+	      return {
+	        meta: markdownData.meta,
+	        description: markdownData.description
+	      };
+	    }
+	  },
+	  plugins: ['bisheng-plugin-description'],
 	  routes: [{
 	    path: '/',
 	    component: './template/Archive'
